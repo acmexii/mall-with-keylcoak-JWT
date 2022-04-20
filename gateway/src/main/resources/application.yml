@@ -10,7 +10,7 @@ spring:
       client:
         provider:
           my-keycloak-provider:
-            issuer-uri: http://localhost:8080/realms/my_realm
+            issuer-uri: http://KEYCLOAK-EXTERNAL-IP/auth/realms/test-realm
         registration:
           keycloak-test-client:
             provider: my-keycloak-provider
@@ -48,7 +48,7 @@ spring:
       client:
         provider:
           my-keycloak-provider:
-            issuer-uri: http://keycloak:8080/realms/my_realm
+            issuer-uri: http://KEYCLOAK-EXTERNAL-IP/auth/realms/test-realm
         registration:
           keycloak-spring-gateway-client:
             provider: my-keycloak-provider
