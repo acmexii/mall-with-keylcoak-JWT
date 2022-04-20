@@ -63,7 +63,7 @@ spring:
         - TokenRelay
       routes:
         - id: order
-          uri: http://order:8081
+          uri: http://order:8080
           predicates:
             - Path=/orders/**, /order/**
       globalcors:
