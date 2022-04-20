@@ -44,7 +44,7 @@ public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
     static class GrantedAuthoritiesExtractor implements Converter<Jwt, Collection<GrantedAuthority>> {
         public Collection<GrantedAuthority> convert(Jwt jwt) {
             final Map<String, Object> resourceAccess = (Map<String, Object>) jwt.getClaims().get("resource_access");
-            final Map<String, List<String>> clientId = (Map<String, List<String>>) resourceAccess.get("spring-gateway-client");
+            final Map<String, List<String>> clientId = (Map<String, List<String>>) resourceAccess.get("test-client");
 
             List<String> roles = (List<String>) clientId.get("roles");
             for (String role : roles) System.out.println("Granted Role is :" + role.toString());
