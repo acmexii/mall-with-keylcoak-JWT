@@ -9,7 +9,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://localhost:8080/realms/my_realm/protocol/openid-connect/certs
+          jwk-set-uri: http://KEYCLOAK-EXTERNAL-IP:80/auth/realms/test-realm/protocol/openid-connect/certs
   jpa:
     properties:
       hibernate:
@@ -53,7 +53,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://keycloak.keycloak:80/realms/my_realm/protocol/openid-connect/certs
+          jwk-set-uri: http://KEYCLOAK-EXTERNAL-IP:80/auth/realms/test-realm/protocol/openid-connect/certs
   jpa:
     properties:
       hibernate:
