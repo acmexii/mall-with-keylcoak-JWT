@@ -1,5 +1,7 @@
 package shopmall;
 
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
+import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +23,12 @@ public class Controller {
 
         return sb.toString();
     }
-
+    
+    @GetMapping("/token")
+    public String getToken(@RegisteredOAuth2AuthorizedClient OAuth2AuthorizedClient authorizedClient) {
+        return authorizedClient.getAccessToken().getTokenValue();
+    }
+    
     @GetMapping("/login")
     public String login(Principal principal) {
         StringBuffer sb = new StringBuffer("<html>");
